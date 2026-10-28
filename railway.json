@@ -1,0 +1,9 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "deploy": {
+    "startCommand": "python -c \"import dados; dados.baixar_se_preciso()\" && gunicorn app:server --workers 1 --threads 8 --timeout 120 --bind 0.0.0.0:$PORT",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 300,
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
