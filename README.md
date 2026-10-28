@@ -45,35 +45,3 @@ python preparar_dados.py          # lê ../EspeciesCosteiras.csv e ../EspeciesMa
 # 2) iniciar
 python app.py                     # http://127.0.0.1:8050
 ```
-
-Para desenvolver com recarga automática: `DEBUG=1 python app.py`.
-
-## Deploy no Railway
-
-Os dados já ficam em `data/ocorrencias/` em partes de menos de 100 MB, então
-dá para enviar tudo pelo GitHub.
-
-1. Crie um repositório só com a pasta `dashboard/` e envie para o GitHub:
-   ```bash
-   cd dashboard
-   git init && git add . && git commit -m "Dashboard biodiversidade"
-   git remote add origin https://github.com/<usuario>/<repo>.git
-   git push -u origin main
-   ```
-   (Ou, sem GitHub: `npm i -g @railway/cli`, `railway login`, `railway init`, `railway up`.)
-2. No Railway: **New Project → Deploy from GitHub repo**. O `railway.json` já
-   define o comando de início (gunicorn).
-3. **Banco para as contribuições** (sem ele, elas se perdem a cada deploy):
-   *New → Database → PostgreSQL*. Depois, no serviço do dashboard, em
-   *Variables*, adicione `DATABASE_URL = ${{Postgres.DATABASE_URL}}`.
-4. Em *Settings → Networking*, clique em **Generate Domain**.
-
-### Variáveis de ambiente (opcionais)
-
-| Variável | Para quê |
-|---|---|
-| `DATABASE_URL` | PostgreSQL das contribuições. Sem ela, usa `data/contribuicoes.db` (SQLite). |
-| `ADMIN_TOKEN` | Senha que libera a exclusão de contribuições na aba *Contribuições*. |
-| `DUCKDB_MEMORY` | Limite de memória do DuckDB (padrão `1GB`). |
-| `DATA_PATH` | Pasta com os `.parquet` (padrão `data/ocorrencias`). |
-| `DATA_URL` | Link de um `.parquet` baixado na inicialização se a pasta estiver vazia. Serve para não versionar os dados. |
