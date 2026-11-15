@@ -1,0 +1,4 @@
+EspeciesCosteiras.csv.gz filter=lfs diff=lfs merge=lfs -text
+EspeciesMarinhas.csv.gz filter=lfs diff=lfs merge=lfs -text
+Add-Content filter=lfs diff=lfs merge=lfs -text
+EspeciesCosteiras.csv filter=lfs diff=lfs merge=lfs -text
