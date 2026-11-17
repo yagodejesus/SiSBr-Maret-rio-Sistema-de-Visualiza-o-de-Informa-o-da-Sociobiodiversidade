@@ -150,3 +150,17 @@ label.rotulo {
   border-color: var(--verde); box-shadow: 0 0 0 0.2rem rgba(100, 197, 176, 0.3);
 }
 .topo h1 .periodo { color: var(--ouro); white-space: nowrap; }
+
+/* ---------- rodapé com realizadores, parceiros e apoio ---------- */
+.rodape {
+  background: #fff;
+  border-top: 4px solid var(--ouro);
+  padding: 18px 24px;
+  text-align: center;
+}
+.rodape img { width: 100%; max-width: 1600px; height: auto; }
+/* no celular a faixa não encolhe até ficar ilegível: rola para o lado */
+@media (max-width: 900px) {
+  .rodape { overflow-x: auto; text-align: left; padding: 14px 16px; }
+  .rodape img { width: 1100px; max-width: none; }
+}

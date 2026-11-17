@@ -347,6 +347,13 @@ app.layout = html.Div([
             ]),
         ], lg=9),
     ])),
+    html.Footer(className="rodape", children=html.Img(
+        src=app.get_asset_url("parceiros.png"),
+        alt="Realizadores, projetos parceiros, organizações parceiras e apoio: Sarambuí, "
+            "Resiliência Inovadora, OSMA, Observatório do Mangue, Fórum de Comunidades "
+            "Tradicionais, Observatório de Territórios Sustentáveis e Saudáveis da Bocaina, "
+            "PPBio, CNPq e Ministério da Ciência, Tecnologia e Inovação · @redemarangatu · "
+            "@observatoriodomangue")),
 ])
 
 
