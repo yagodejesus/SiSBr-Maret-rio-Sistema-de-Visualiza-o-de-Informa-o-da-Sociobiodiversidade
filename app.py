@@ -333,8 +333,12 @@ app.layout = html.Div([
             html.P("Ocorrências de espécies nos municípios costeiros e no Sistema Marinho "
                    "· filtre, analise e contribua com novas características no mapa"),
         ]),
-        html.Div(className="selo", children=[
-            html.B(fmt(dados.kpis({})["registros"])), " registros na base"]),
+        html.Div(className="topo-direita", children=[
+            html.Div(className="selo", children=[
+                html.B(fmt(dados.kpis({})["registros"])), " registros na base"]),
+            html.Img(src=app.get_asset_url("logo_marangatu.png"), alt="Rede Marangatu",
+                     className="logo-topo"),
+        ]),
     ]),
     html.Div(className="conteudo", children=dbc.Row([
         dbc.Col(filtros, lg=3),

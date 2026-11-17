@@ -164,3 +164,10 @@ label.rotulo {
   .rodape { overflow-x: auto; text-align: left; padding: 14px 16px; }
   .rodape img { width: 1100px; max-width: none; }
 }
+
+/* logo da Rede Marangatu no canto superior direito */
+.topo-direita { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+.logo-topo { height: 78px; width: 78px; flex-shrink: 0; }
+@media (max-width: 600px) {
+  .logo-topo { height: 56px; width: 56px; }
+}
